@@ -26,8 +26,11 @@ Route::get('/logout', 'AdminController@logout');
 //Mobil
 Route::get('/listmobil', 'AdminController@viewMobil')->middleware('auth')->name('listmobil');
 Route::post('/savemobil', 'AdminController@addMobil')->middleware('auth')->name('savemobil');
-Route::get('/getMobilByID/{idMobil}','AdminController@getMobilByID')->middleware('auth')->name('getMobilByID');
+Route::get('/listmobil/{idMobil}','AdminController@getMobilByID')->middleware('auth')->name('getMobilByID');
 Route::get('/hapusMobil/{idMobil}','AdminController@deleteMobil')->middleware('auth')->name('hapusMobil');
 Route::post('/updateMobil', 'AdminController@updateMobil')->middleware('auth')->name('updateMobil');
 
 //Pemesanan
+Route::get('/listpemesanan', 'AdminController@viewPemesanan')->middleware('auth')->name('listpemesanan');
+Route::get('/listpemesanan/{idPemesanan}', 'AdminController@getPemesananByID')->middleware('auth')->name('getPemesananByID');
+Route::post('updatePemesanan', 'AdminController@updatePemesanan')->middleware('auth')->name('updatePemesanan');

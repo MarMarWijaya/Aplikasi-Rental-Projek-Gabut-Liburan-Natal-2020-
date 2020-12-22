@@ -53,4 +53,25 @@ class AdminController extends Controller
         );
         return redirect('/listmobil');
     }
+
+    //Pemesanan
+    public function viewPemesanan(){
+        $allPemesanan = DB::table('pemesanan')->get();
+        return view('listPemesanan', ['allPemesanan'=>$allPemesanan]);
+    }
+
+    public function getPemesananByID($idPemesanan){
+        $pemesananByID = DB::table('pemesanan')->where('idPemesanan', $idPemesanan)->get();
+        return view('detailPemesanan', ['data'=>$pemesananByID]);
+    }
+
+    public function updatePemesanan(Request $req){
+        DB::table('pemesanan')->where('idPemesanan', $req->idPemesanan)
+        ->update(
+            [
+                'status' => $req->status
+            ]
+        );
+        return redirect('/listpemesanan');
+    }
 }
