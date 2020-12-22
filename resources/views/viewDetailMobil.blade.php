@@ -9,7 +9,7 @@
     Plat Nomor : {{ $dM->platNomor }} <br>
     Harga : {{ $dM->harga_6_jam }} <br>
 @endforeach
-    <table>
+    <table border="1">
     <thead>
         <tr>
             <td>Sudah dipesan oleh</td>
@@ -27,6 +27,7 @@
     @endforeach
     </tbody>
     </table>
+    <h3 style="color: red">Mohon diperhatikan jadwal mobil yang sudah dipesan di atas agar tidak terjadi bentrok jadwal</h3>
     <br>
     
         Nama Pemesan: <input type="text" name="namaPemesan"><br>

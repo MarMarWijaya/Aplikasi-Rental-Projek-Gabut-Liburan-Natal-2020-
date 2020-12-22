@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::get('/pesan', 'UserController@viewAllMobil');
 Route::get('/pesan/{idMobil}', 'UserController@viewMobilByID');
 Route::post('/prosesData', 'UserController@prosesData');
+Route::post('/', 'UserController@checkout');
 
 //Admin
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

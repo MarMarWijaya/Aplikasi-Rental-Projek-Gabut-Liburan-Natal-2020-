@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -70,5 +71,48 @@ class UserController extends Controller
             'tanggalSelesai' => $tanggalSelesai, 
             'harga' => $hargaMobil
         ]);
+    }
+
+    public function checkout(Request $req){
+        //DB Insert
+        DB::table('pemesanan')
+        ->insert([
+            'idMobil' => $req->idMobil,
+            'namaPemesan' => $req->namaPemesan,
+            'hpPemesan' => $req->hpPemesan,
+            'emailPemesan' => $req->emailPemesan,
+            'tanggalPemesanan' => $req->tanggalPemesanan,
+            'tanggalSelesai' => $req->tanggalSelesai,
+            'harga' => $req->harga,
+            'status' => $req->status
+        ]);
+
+        //Email
+        $data = array(
+            'merkMobil' => $req->merkMobil,
+            'namaMobil' => $req->namaMobil,
+            'platNomor' => $req->platNomor,
+            'namaPemesan' => $req->namaPemesan,
+            'hpPemesan' => $req->hpPemesan,
+            'emailPemesan' => $req->emailPemesan,
+            'tanggalPemesanan' => $req->tanggalPemesanan,
+            'tanggalSelesai' => $req->tanggalSelesai,
+            'harga' => $req->harga,
+            'status' => $req->status
+        );
+        $email = $req->emailPemesan;
+        // Kirim Email
+        Mail::send('email_template', $data, function($mail) use($email) {
+            $mail->to($email, 'no-reply')
+                    ->subject("Bukti Pemesanan Mobil");
+            $mail->from('mariowijaya31@gmail.com', 'Rental Mobil Asek Asek Jos');
+        });
+
+        // Cek kegagalan
+        if (Mail::failures()) {
+            return "Gagal mengirim Email";
+        }
+        return view('home', ['msg' => "Terimakasih sudah menggunakan layanan kami, cek email Anda untuk melihat bukti pemesanan"]);
+        
     }
 }
