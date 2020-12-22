@@ -13,9 +13,14 @@
             @if(isset($mobil))
                 @foreach($mobil as $m)
                 <table cellpadding="10%">
-                <form action='/updateMobil' method="POST">
+                <form action='/updateMobil' method="POST" enctype="multipart/form-data">
                 @csrf
                     <input type="hidden" name="id" value="{{ $m->idMobil }}">
+                    <tr>
+                        <td>Foto Mobil</td>
+                        <td>:</td>
+                        <td><input type="file" name="foto"></td>
+                    </tr>
                     <tr>
                         <td>Merk Mobil</td>
                         <td>:</td>

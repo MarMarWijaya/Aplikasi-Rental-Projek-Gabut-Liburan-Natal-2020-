@@ -14,10 +14,15 @@ use App\Http\Controllers\AdminController;
 |
 */
 
+//User
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('/pesan', 'UserController@viewAllMobil');
+Route::get('/pesan/{idMobil}', 'UserController@viewMobilByID');
+Route::post('/prosesData', 'UserController@prosesData');
 
+//Admin
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

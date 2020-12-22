@@ -19,8 +19,13 @@ class AdminController extends Controller
     }
 
     public function addMobil(Request $req){
+        $image = $req->file('foto');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('foto'), $new_name);
         DB::table('mobil')->insert(
             [
+                'fotoMobil' => $new_name,
                 'merkMobil' => $req->merk,
                 'namaMobil' => $req->nama,
                 'platNomor' => $req->plat,
@@ -41,10 +46,15 @@ class AdminController extends Controller
     }
 
     public function updateMobil(Request $req){
+        $image = $req->file('foto');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('foto'), $new_name);
+
         DB::table('mobil')
         ->where('idMobil',$req->id)
         ->update(
             [
+                'fotoMobil' => $new_name,
                 'merkMobil' => $req->merk,
                 'namaMobil' => $req->nama,
                 'platNomor' => $req->plat,

@@ -29,9 +29,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="/savemobil" method='POST'>
+            <form action="/savemobil" method='POST' enctype="multipart/form-data">
             @csrf
-                <table>
+                <table cellpadding="5%">
+                    <tr>
+                        <td>Foto</td>
+                        <td>:</td>
+                        <td><input type='file' name='foto'></td>
+                    </tr>
                     <tr>
                         <td>Merk</td>
                         <td>:</td>
@@ -69,6 +74,7 @@
         <thead class="table-dark">
             <tr>
                 <td>ID</td>
+                <td>Foto</td>
                 <td>Merk</td>
                 <td>Nama</td>
                 <td>Plat Nomor</td>
@@ -80,6 +86,7 @@
         @foreach($allMobil as $aM)
             <tr>
                 <td>{{ $aM->idMobil }}</td>
+                <td><img src="/foto/{{ $aM->fotoMobil }}" width="100px"></td>
                 <td>{{ $aM->merkMobil }}</td>
                 <td>{{ $aM->namaMobil }}</td>
                 <td>{{ $aM->platNomor }}</td>
