@@ -1,0 +1,46 @@
+/* INI ADALAH STYLE JUMBOTRON */
+.jumbotron{
+    background-image: url('https://images.unsplash.com/photo-1592891056565-d035c022bfdb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    height: 791px;
+    text-align: center;
+    margin-top: -75px;
+}
+
+.jumbotron .display-4{
+    color : black;
+    font-family: Verdana;
+    margin-bottom: -20px;
+}
+
+.jumbotron p{
+    margin-top:3%;
+    color: black;
+    font-size: 25px;
+}
+
+.jumbotron hr{
+    border-width: 3px;
+}
+
+.jumbotron .btn{
+    border-radius: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 40px;
+}
+
+/* INI ADALAH STYLE ROW */
+.container .row{
+    margin: center;
+}
+.row .column-content-left{
+    border: 1px solid #white;
+    border-radius: 8px;
+    margin-left:7%;
+}
+
+.row .column-content-right{
+    border: 1px solid #white;
+    border-radius: 8px;
+}
