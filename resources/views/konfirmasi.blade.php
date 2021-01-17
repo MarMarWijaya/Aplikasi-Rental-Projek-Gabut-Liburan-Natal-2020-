@@ -21,9 +21,6 @@
                         <li class="nav-item">
                             <a class="nav-link active js-scroll-trigger" href=""><span class="sr-only">(current)</span>Pesan</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="tentang">Tentang Kami</a>
-                        </li>
                     </ul>
                 </div>
             </div>

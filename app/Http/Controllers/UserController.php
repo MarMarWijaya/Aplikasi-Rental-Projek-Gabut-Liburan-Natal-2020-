@@ -13,6 +13,10 @@ class UserController extends Controller
         return view('pesan', ['dataMobil' => $allMobil]);
     }
 
+    public function tentang(){
+        return view('tentang');
+    }
+
     public function viewMobilByID($idMobil){
         $detailMobil = DB::table('mobil')
         ->select('idMobil', 'fotoMobil', 'merkMobil', 'namaMobil','platNomor', 'harga_6_jam')

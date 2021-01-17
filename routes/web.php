@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/pesan', 'UserController@viewAllMobil');
+Route::get('/tentang', 'UserController@tentang');
 Route::get('/pesan/{idMobil}', 'UserController@viewMobilByID');
 Route::post('/prosesData', 'UserController@prosesData');
 Route::post('/', 'UserController@checkout');

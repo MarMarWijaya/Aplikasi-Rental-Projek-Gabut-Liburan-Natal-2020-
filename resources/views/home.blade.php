@@ -29,7 +29,7 @@
                             <a class="nav-link js-scroll-trigger" href="pesan">Pesan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="tentang">Tentang Kami</a>
+                            <a class="nav-link js-scroll-trigger" href="/tentang">Tentang Kami</a>
                         </li>
                     </ul>
                 </div>

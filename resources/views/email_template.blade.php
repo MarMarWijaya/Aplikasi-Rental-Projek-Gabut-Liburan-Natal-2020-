@@ -1,26 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-<p>Hai, {{ $namaPemesan }}</p>
-<p>Kamu baru saja memesan rental mobil dari layanan kami dengan data sebagai berikut :</p>
-<p>Merk Mobil : {{ $merkMobil }}</p>
-<p>Nama Mobil : {{ $namaMobil }}</p>
-<p>No Plat : {{ $platNomor }}</p>
-<p>Nama Pemesan : {{ $namaPemesan }}</p>
-<p>No HP : {{ $hpPemesan }}</p>
-<p>Email Pemesan : {{ $emailPemesan }}</p>
-<p>Tanggal Pemesanan : {{ $tanggalPemesanan }}</p>
-<p>Tanggal Selesai : {{ $tanggalSelesai }}</p>
-<p>Harga : Rp.{{ $harga }}</p>
-<p>Status Pembayaran : {{ $status}}</p>
-<p>Terimakasih telah menggunakan layanan kami.</p>
-<p>Semoga hari Anda menyenangkan.</p>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html>
 <head>

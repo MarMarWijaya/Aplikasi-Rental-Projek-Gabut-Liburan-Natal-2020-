@@ -34,9 +34,6 @@
                         <li class="nav-item">
                             <a class="nav-link active js-scroll-trigger" href=""><span class="sr-only">(current)</span>Pesan</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="tentang">Tentang Kami</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -68,7 +65,6 @@
             </div>
             <br>
             <marquee style="color: red" width="900"><h3>Mohon diperhatikan jadwal mobil yang sudah dipesan di atas, agar tidak terjadi bentrok jadwal pada saat memesan rental mobil, Terimakasih &#128522;</h3></marquee>
-            <!-- <h3 style="color: red">Mohon diperhatikan jadwal mobil yang sudah dipesan di atas agar tidak terjadi bentrok jadwal</h3> -->
             </center>
         </div>
         @foreach($detailMobil as $dM)
@@ -93,7 +89,7 @@
                                 </tr>
                             </table>
                     </div>
-                    <div class="column-content-right col-md-4" style="border: 1px solid #; border-radius: 0px; margin-top:3%">
+                    <div class="column-content-right col-md-4" style="border: 1px solid #; border-radius: 0px;">
                         <table class="table" border="0" style="margin-top:10%">
                             <tr>
                                 <td>Nama Pemesan</td>
