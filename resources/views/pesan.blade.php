@@ -15,12 +15,12 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item active">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="/">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href=""><span class="sr-only">(current)</span>Pesan</a>
+                            <a class="nav-link active js-scroll-trigger" href=""><span class="sr-only">(current)</span>Pesan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="tentang">Tentang Kami</a>
@@ -29,33 +29,49 @@
                 </div>
             </div>
         </nav>
-        <br><br><br><br><br>
-        <table class="table">
-                <thead class="table-dark">
-                    <tr>
-                        <td>ID</td>
-                        <td>Foto</td>
-                        <td>Merk</td>
-                        <td>Nama</td>
-                        <td>Plat Nomor</td>
-                        <td>Harga Sewa per 6 jam</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
+        <br><br><br>
+            <div class="container">
+                <div class="row">
                 @foreach($dataMobil as $aM)
-                    <tr>
-                        <td>{{ $aM->idMobil }}</td>
-                        <td><img src="/foto/{{ $aM->fotoMobil }}" width="100px"></td>
-                        <td>{{ $aM->merkMobil }}</td>
-                        <td>{{ $aM->namaMobil }}</td>
-                        <td>{{ $aM->platNomor }}</td>
-                        <td>{{ $aM->harga_6_jam }}</td>
-                        <td><a href="/pesan/{{ $aM->idMobil }}">Lihat Detail</a></td>
-                    </tr>
-                @endforeach
-                <tbody>
-            </table>
+                    <div class="column-content-left col-md-5" style="border: 1px solid #white; border-radius: 0px; margin-left:16%;">
+                        <table border="0">
+                                <tr>
+                                    <td><img src="/foto/{{ $aM->fotoMobil }}" class="img-fluid" alt="Responsive image"></td>
+                                </tr>
+                        </table> 
+                    </div>
+                    
+                    <div class="column-content-right col-md-3" style="border: 1px solid #white; border-radius: 0px;">
+                        <table class="table" border="0" style="margin-top:25%">
+                            <tr>
+                                <td>Merk</td>
+                                <td>:</td>
+                                <td>{{ $aM->merkMobil }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>{{ $aM->namaMobil }}</td>
+                            </tr>
+                            <tr>
+                                <td>Plat Nomor</td>
+                                <td>:</td>
+                                <td>{{ $aM->platNomor }}</td>
+                            </tr>
+                            <tr>
+                                <td>Harga Sewa per 6 jam</td>
+                                <td>:</td>
+                                <td>{{ $aM->harga_6_jam }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><center><a class="btn btn-warning btn-lg font-weight-bold" href="/pesan/{{ $aM->idMobil }}" role="button" style="width:100%">PESAN SEKARANG</a></center></td>
+                            </tr>
+                        </table>
+                    </div>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    @endforeach
+                </div>
+                <br>
+            </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
